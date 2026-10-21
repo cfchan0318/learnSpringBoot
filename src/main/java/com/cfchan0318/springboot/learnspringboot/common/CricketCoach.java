@@ -1,4 +1,4 @@
-package com.cfchan0318.springboot.learnspringboot;
+package com.cfchan0318.springboot.learnspringboot.common;
 
 import org.springframework.stereotype.Component;
 
