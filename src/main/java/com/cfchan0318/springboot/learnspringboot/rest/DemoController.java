@@ -11,16 +11,21 @@ public class DemoController {
 
     //define a private field
     private Coach myCoach;
+    private  Coach anotherCoach;
 
-    /*@Autowired
-    public DemoController(@Qualifier("baseballCoach") Coach theCoach){
+    @Autowired
+    public DemoController(
+            @Qualifier("cricketCoach") Coach theCoach,
+            @Qualifier("cricketCoach") Coach theAnotherCoach){
+        System.out.println("In constructor:"+ getClass().getSimpleName());
         myCoach = theCoach;
+        anotherCoach = theAnotherCoach;
     }
-    */
 
-    public DemoController(Coach theCoach){
+
+    /*public DemoController(Coach theCoach){
         myCoach = theCoach;
-    }
+    }*/
     /*@Autowired
     public void doSomething(Coach theCoach){
         myCoach = theCoach;
@@ -29,5 +34,10 @@ public class DemoController {
     @GetMapping("/dailyworkout")
     public String getDailyWorkout(){
         return myCoach.getDailyWorkout();
+    }
+
+    @GetMapping("/check")
+    public String check(){
+        return "Comparing beans: myCoach == anotherCoach, "+ (myCoach == anotherCoach);
     }
 }
