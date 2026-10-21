@@ -12,11 +12,15 @@ public class DemoController {
     //define a private field
     private Coach myCoach;
 
-    @Autowired
+    /*@Autowired
     public DemoController(@Qualifier("baseballCoach") Coach theCoach){
         myCoach = theCoach;
     }
+    */
 
+    public DemoController(Coach theCoach){
+        myCoach = theCoach;
+    }
     /*@Autowired
     public void doSomething(Coach theCoach){
         myCoach = theCoach;
